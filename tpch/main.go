@@ -30,7 +30,7 @@ func main() {
 		fmt.Printf("%v\n", f)
 		totCost := time.Duration(0)
 		for i := 0; i < *tpchCountFlag; i++ {
-			time.Sleep(*tpchSleepFlag * time.Second)
+			time.Sleep(time.Duration(*tpchSleepFlag) * time.Second)
 			cur := time.Now()
 			var stderr bytes.Buffer
 			cmd := exec.Command("mysql",
